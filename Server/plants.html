@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Plants Plants Plants</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+</head>
+<body>
+  <div id="wrapper" style="display:inline-block; height:80%; width:80%;">
+	<canvas id="myChart"></canvas>
+	<script>
+
+	    $( document ).ready(function() {
+			var url = new URL(window.location.href);
+			var token = url.searchParams.get("token");
+
+			var json_url = "https://worklife.grahamkeggi.com/display_readings.php?did=3&ch=0&token="+token;
+
+			$.getJSON(json_url, function(data) {build_chart(data);} );
+
+		});
+
+		function build_chart(data) {
+
+        	var json = data;
+			json = JSON.parse(JSON.stringify(json).split('"received_at":').join('"x":'));
+			json = JSON.parse(JSON.stringify(json).split('"reading":').join('"y":'));
+
+        	console.log(json);
+
+			var somejson = [{ x: "2017-11-22 07:00:00", y: "100" }, { x: "2017-11-22 08:00:00", y: "130" }, { x: "2017-11-22 09:00:00", y: "190" }, { x: "2017-11-22 12:00:00", y: "200" }];
+
+			var ctx = document.getElementById("myChart").getContext('2d');
+			var myChart = new Chart(ctx, {
+			    type: 'scatter',
+			    data: {
+			        datasets: [{
+			            label: 'Sensor Reading',
+			            data: json,
+			            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+			            borderColor: 'rgba(255,99,132,1)',
+			            borderWidth: 1
+			        }]
+			    },
+			    options: {
+			        scales: {
+			        	xAxes: [{
+			                type: 'time',
+			                time: {
+			                    displayFormats: {
+			                        day: 'dd MMM D'
+			                    }
+			                }
+			            }],
+			            yAxes: [{
+			                ticks: {
+			                    beginAtZero:false
+			                }
+			            }]
+			        }
+			    }
+			});
+		}
+	</script>
+
+  </div>   
+</body>
+</html>
