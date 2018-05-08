@@ -1,6 +1,6 @@
 <?php
 	
-	require_once('../../lib/secrets_db.php');
+	require_once('../../config/secrets_db.php');
 
 	// Sanity check the request
 

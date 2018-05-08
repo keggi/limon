@@ -5,7 +5,7 @@
 	// Basically if you have the token you can view the page
 	// display_readings.php?did=3&ch=0&token=somereasonablylonghexstringgeneratedrandomly
 
-	require_once('../lib/secrets_db.php');
+	require_once('../config/secrets_db.php');
 
 	// Sanity check the request
 
