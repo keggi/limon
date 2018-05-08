@@ -1,6 +1,6 @@
 <?php
 
-	// DB Connection Keys
+	// DB Connection Keys - Replace these with your own
     $mysql_hostname = 'mysql.YOURDOMAIN.com';
     $mysql_username = 'MYSQL_USERNAME';
     $mysql_password = 'MYSQL_PASSWORD';
