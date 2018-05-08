@@ -1,9 +1,9 @@
 <?php
 	
-	$page_token = 'waco7xWTFDviQPczMwt0H19isbAcLkF5';
+	$page_token = 'somereasonablylonghexstringgeneratedrandomly';
 	
 	// Basically if you have the token you can view the page
-	// display_readings.php?did=3&ch=0&token=waco7xWTFDviQPczMwt0H19isbAcLkF5
+	// display_readings.php?did=3&ch=0&token=somereasonablylonghexstringgeneratedrandomly
 
 	require_once('../lib/secrets_db.php');
 
