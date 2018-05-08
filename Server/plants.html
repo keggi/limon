@@ -16,7 +16,7 @@
 			var url = new URL(window.location.href);
 			var token = url.searchParams.get("token");
 
-			var json_url = "https://worklife.grahamkeggi.com/display_readings.php?did=3&ch=0&token="+token;
+			var json_url = "https://yourdomain.com/display_readings.php?did=3&ch=0&token="+token;
 
 			$.getJSON(json_url, function(data) {build_chart(data);} );
 
