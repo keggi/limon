@@ -30,7 +30,7 @@ EthernetClient client;
 bool conn_type = CONN_DHCP;
 
 // API setup
-char server[] = "worklife.grahamkeggi.com";
+char server[] = "yourdomain.com";
 unsigned long lastConnectionTime = 0;
 unsigned long postingInterval = POST_INTERVAL_10S;
 
