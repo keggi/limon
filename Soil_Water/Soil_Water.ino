@@ -172,7 +172,7 @@ char httpRequest(unsigned char endpoint) {
         break;
     }
     
-    client.println("Host: worklife.grahamkeggi.com");
+    client.println("Host: yourdomain.com");
     client.println("User-Agent: arduino-ethernet");
 
     switch (endpoint)
